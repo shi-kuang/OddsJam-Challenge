@@ -1,0 +1,52 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:hover {
+  background-color: gray;
+}
+
+@media (width < 600px) {
+  /* .container {
+    padding: 10px;
+  } */
+
+  th,
+  td {
+    padding: 6px;
+    font-size: 6px;
+  }
+}
+
+@media (600px <= width <= 992px) {
+  th,
+  td {
+    padding: 10px;
+    font-size: 10px;
+  }
+}
+
+@media (width > 992px) {
+  th,
+  td {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
