@@ -13,6 +13,7 @@ npm run dev
 2. Functionality to sort by arb percent
 3. Functionality to check off an event if you placed a bet on the event
 4. Mobile friendly interface
+5. Supported by Typescript
 
 # Additional Features (if given more time)
 
@@ -24,4 +25,4 @@ npm run dev
 
 this app is hosted on vercel
 
-for a demo please visit:
+for a demo please visit: https://odds-jam-challenge.vercel.app/
