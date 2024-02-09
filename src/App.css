@@ -1,52 +1,105 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 75%;
   text-align: center;
-  color: white;
+  color: black;
+  margin: 0 auto;
+  font-size: 15px;
+  padding: 1rem;
 }
 
-table {
+body {
+  background-color: #f2f2f2;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.dataTable {
   border-collapse: collapse;
   width: 100%;
+  white-space: nowrap;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
-th,
+.dataRow {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
 td {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  text-align: left;
   padding: 10px;
 }
 
-tr:hover {
-  background-color: gray;
+.dataRow:hover {
+  background-color: #f2f2f2 !important;
 }
 
-@media (width < 600px) {
-  /* .container {
-    padding: 10px;
-  } */
+/* .dataRow:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
+.dataRow:nth-child(odd) {
+  background-color: #ffffff;
+} */
+
+.header {
+  background-color: #ffffff;
+  color: black;
+  padding: 10px;
+}
+
+.filter {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+@media (max-width: 992px) {
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+
+  td:first-child {
+    padding-top: 2rem;
+  }
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+
+  td::before {
+    content: attr(data-cell) ": ";
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+}
+@media (min-width: 993px) and (max-width: 1280px) {
+  .dataTable {
+    width: 50;
+    margin: 0 auto;
+  }
   th,
   td {
-    padding: 6px;
-    font-size: 6px;
+    padding: 0.25rem 0.5rem;
+    font-size: 80%;
   }
 }
 
-@media (600px <= width <= 992px) {
-  th,
-  td {
-    padding: 10px;
-    font-size: 10px;
+@media (min-width: 1281px) {
+  .dataTable {
+    width: 75%;
+    margin: 0 auto;
   }
-}
-
-@media (width > 992px) {
   th,
   td {
-    padding: 12px;
-    font-size: 12px;
+    padding: 0.5rem 1rem;
+    font-size: 100%;
   }
 }

@@ -20,18 +20,41 @@ export interface ArbitrageData {
   bet_placed: boolean;
 }
 
-export interface CellInfo {
-  cellInfo: any;
-  label: string;
+export interface StateData {
+  gameID: { cellInfo: string };
+  betPlaced: { cellInfo: boolean };
+  percent: { cellInfo: number };
+  eventDate: { cellInfo: string };
+  event: { cellInfo: any };
+  market: { cellInfo: string };
+  bets: { cellInfo: any };
+  books: { cellInfo: any };
+  oddsJam: { cellInfo: any };
 }
 
-export interface StateData {
-  betPlaced: { cellInfo: boolean; label: string };
-  percent: { cellInfo: string; label: string };
-  eventDate: { cellInfo: string; label: string };
-  event: { cellInfo: any; label: string };
-  market: { cellInfo: string; label: string };
-  bets: { cellInfo: any; label: string };
-  books: { cellInfo: any; label: string };
-  oddsJam: { cellInfo: any; label: string };
+export interface HeaderProps {
+  header: string;
+  handleSort: () => void;
+  sortByPercent: string;
+}
+
+export interface RowProps {
+  rowData: {
+    gameID: { cellInfo: string };
+    percent: { cellInfo: number };
+    eventDate: { cellInfo: string };
+    event: { cellInfo: { team: string; league: string; sport: string } };
+    market: { cellInfo: string };
+    bets: { cellInfo: { home: string; away: string } };
+    books: {
+      cellInfo: {
+        home: { odd: string; books: string[] };
+        away: { odd: string; books: string[] };
+      };
+    };
+    oddsJam: { cellInfo: { home: string | null; away: string | null } };
+  };
+  rowIndex: number;
+  betPlaced: boolean[];
+  handleBetPlaced: (checked: boolean, index: number) => void;
 }
